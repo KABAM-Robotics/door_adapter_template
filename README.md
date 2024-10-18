@@ -59,3 +59,25 @@ Run the command below while passing the paths to the configuration file to opera
 ```bash
 ros2 run door_adapter door_adapter -c CONFIG_FILE
 ```
+
+### Docker Build
+
+Run the command below to utilise the root `Dockerfile` to build `door_adapter_template` in docker:
+
+```bash
+docker build -t door_adapter_template:humble .
+```
+
+### Docker Run
+
+Run the command below to utilise the root `Dockerfile` to build `door_adapter_template` in docker:
+
+```bash
+docker run -it --rm \
+    --name door_adapter_template_c \
+    --network host \
+    -v /dev/shm:/dev/shm \
+    -v ./door_adapter_template/config.yaml:/door_adapter_template_ws/src/door_adapter_template/config.yaml \
+door_adapter_template:humble /bin/bash -c \
+"source /ros_entrypoint.sh && ros2 run door_adapter_template door_adapter --config_file /door_adapter_template_ws/src/door_adapter_template/config.yaml"
+```
