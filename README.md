@@ -1,10 +1,10 @@
-# door_adapter_template
+# **door_adapter_template**
 
 The objective of this package is to serve as a reference or template for writing a python based RMF door adapter.
 
 > Note: This package is only one such example that may be helpful for users to quickly integrate door control with RMF.
 
-## Step 1: Fill up missing code
+## **Step 1**: Fill up missing code
 Simply fill up certain blocks of code which make `REST` API calls to IOT door.
 These blocks are highlighted as seen below and are found in `DoorClientAPI.py` 
 ```
@@ -46,13 +46,13 @@ Alternatively, if your door offers a websocket port for communication or allows 
 
 >Note: you could refer to the example mock door_adapter in the `door_adapter_template/example` folder
 
-## Step 2: Update config.yaml
+## **Step 2**: Update config.yaml
 The `config.yaml` file contains important parameters for setting up the door adapter. There are three broad sections to this file:
 
 1. **name** : the door name to display and called by RMF
 2. **api_endpoint** : REST API endpoint to communicate to the door
 
-## Step 3: Run the door adapter:
+## **Step 3**: Run the door adapter:
 
 Run the command below while passing the paths to the configuration file to operate on.
 
@@ -60,7 +60,7 @@ Run the command below while passing the paths to the configuration file to opera
 ros2 run door_adapter door_adapter -c CONFIG_FILE
 ```
 
-### Docker Build
+### **Docker Build**
 
 Run the command below to utilise the root `Dockerfile` to build `door_adapter_template` in docker:
 
@@ -68,9 +68,9 @@ Run the command below to utilise the root `Dockerfile` to build `door_adapter_te
 docker build -t door_adapter_template:humble .
 ```
 
-### Docker Run
+### **Docker Run**
 
-Run the command below to utilise the root `Dockerfile` to build `door_adapter_template` in docker:
+Run the command below to utilise the root `Dockerfile` to run `door_adapter_template` in docker:
 
 ```bash
 docker run -it --rm \
