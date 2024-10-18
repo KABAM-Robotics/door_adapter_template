@@ -30,7 +30,7 @@ class Door:
 
 class DoorAdapter(Node):
     def __init__(self,config_yaml):
-        super().__init__('door_adapter')
+        super().__init__('door_adapter_template_node')
         self.get_logger().info('Starting door adapter...')
 
         # Get value from config file
